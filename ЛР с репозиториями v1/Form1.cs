@@ -141,7 +141,13 @@ namespace ЛР_с_репозиториями_v1
                     b = a / float.Parse(textBox1.Text);
                     textBox1.Text = b.ToString();
                     break;
-                default:
+                case 5:
+                    b = (float)Math.Pow(a, float.Parse(textBox1.Text));
+                    textBox1.Text = b.ToString();
+                    break;
+                case 6:
+                        b = (float)Math.Sqrt(a);
+                        textBox1.Text = b.ToString();
                     break;
             }
         }
@@ -253,6 +259,38 @@ namespace ЛР_с_репозиториями_v1
             {
                 textBox1.Text = textBox1.Text.Replace("-", "");
                 znak = true;
+            }
+        }
+
+        private void sqrt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                a = float.Parse(textBox1.Text);
+                textBox1.Clear();
+                count = 6;
+                label1.Text = a.ToString() + "√";
+                znak = true;
+            }
+            catch
+            {
+                MessageBox.Show("введите значение до √");
+            }
+        }
+
+        private void pow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                a = float.Parse(textBox1.Text);
+                textBox1.Clear();
+                count = 5;
+                label1.Text = a.ToString() + "^";
+                znak = true;
+            }
+            catch
+            {
+                MessageBox.Show("введите значение");
             }
         }
 
